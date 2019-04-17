@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="src/css/index.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="nav">
+            <ul class="list">
+                <li class="list_1">存储区</li>
+                <li class="list_2">寄存器</li>
+            </ul>
+        </div>
+        <div class="topWrapper">
+            <!-- <button class="save">保存</button>
+            <button class="saveAs">另存</button>
+            <button class="open">打开</button> -->
+            <button class="full_speed">全速运行</button>
+            <button class="slow_speed">慢速运行</button>
+            <button class="by_step">单步执行</button>
+            <button class="reset">重载/复位</button>
+            <button class="stop">停止</button>
+        </div>
+        <div class="leftWrapper">
+            <div class="control-led">
+                <div class="led" id="">led1</div>
+                <div class="led" id="">led2</div>
+                <div class="led" id="">led3</div>
+                <div class="led" id="">led4</div>
+                <div class="led" id="">led5</div>
+                <div class="led" id="">led6</div>
+                <div class="led" id="">led7</div>
+                <div class="led" id="">led8</div>
+            </div>
+            <div class="switch-container">
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+                </div>
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+                </div>
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+                </div>
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+                </div>
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+                </div>
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+                </div>
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+                </div>
+                <div class="switch demo3">
+					<input type="checkbox">
+					<label><i></i></label>
+				</div>
+            </div>
+
+        </div>
+        <div id="blocklyDiv"></div>
+        <div class="reg">
+            <div id="infoDiv">
+                程序计数器PC:
+                <input type="text" id="pc" size=2 onkeyup="ladybug();"> 指令寄存器IR:
+                <input type="text" id="ir" size=3 readonly>
+
+                <br> 存储器地址寄存器MAR:
+                <input type="text" id="mar" size=2> 存储器数据寄存器MDR:
+                <input type="text" id="mdr" size=2>
+                <br>
+                <b>指令译码</b>
+                操作码Opcode:
+                <input type="text" id="opcode" size=9 readonly> 操作数Operand:
+                <input type="text" id="operand" size=2 readonly>
+                <hr> 累加器AC:
+                <input type="text" id="acc" size=5 readonly> 堆栈指针SP:
+                <input type="text" id="sp" size=5 readonly> 寄存器BR:
+                <input type="text" id="br" size=5 readonly> 计数器CR:
+                <input type="text" id="cr" size=5 readonly>
+                <hr>
+
+                <b>输入和输出设备</b>
+                <br> 来自输入设备（地址1）的数据:
+                <input type="text" id="input1" size=9 readonly>
+                <br> 发给输出设备（地址0）的数据:
+                <input type="text" id="output0" size=9 readonly>
+            </div>
+            <div id="memDiv">
+                <textarea id="memTxt" rows="13" cols="60" readonly="readonly">
+					</textarea>
+            </div>
+
+        </div>
+
+    </div>
+    <xml id="toolbox" style="display: none;">
+        <category name="存储器读写" colour="#820f20" expanded="true">
+            <category name="直接寻址" expanded="true">
+                <block type="ld">
+                    <filed name="Address">00</filed>
+                </block>
+                <block type="st">
+                    <filed name="Address">00</filed>
+                </block>
+            </category>
+            <category name="间接寻址" expanded="true">
+                <block type="ldi"></block>
+                <block type="sti"></block>
+
+            </category>
+
+        </category>
+        <category name="堆栈操作" colour="#f00220" expanded="true">
+            <block type="push"></block>
+            <block type="pop"></block>
+        </category>
+        <category name="子程序" colour="#3f400d" expanded="true">
+            <block type="call"></block>
+            <block type="ret"></block>
+        </category>
+        <category name="运算指令" colour="#6ff9ad" expanded="true">
+            <block type="add"></block>
+            <block type="sub"></block>
+            <block type="and"></block>
+            <block type="or"></block>
+            <block type="xor"></block>
+            <block type="not"></block>
+        </category>
+        <category name="跳转指令" colour="#0003f4" expanded="true">
+            <block type="jc"></block>
+            <block type="jz"></block>
+            <block type="jo"></block>
+            <block type="js"></block>
+            <block type="jmp"></block>
+        </category>
+        <category name="输入输出" colour="#ddf00f" expanded="true">
+            <block type="in"></block>
+            <block type="out"></block>
+        </category>
+        <category name="寄存器赋值" colour="#2dd900" expanded="true">
+            <block type="mov_reg_data"></block>
+        </category>
+        <category name="寄存器传值" colour="#8aaaee" expanded="true">
+            <block type="mov_ac_reg"></block>
+            <block type="mov_reg_ac"></block>
+            <block type="inc_reg"></block>
+            <block type="dec_reg"></block>
+        </category>
+
+
+    </xml>
+    <script src="./blockly/blockly_compressed.js"></script>
+    <!-- <script src="./blockly/blocks_compressed.js"></script> -->
+    <script src="blockly/javascript_compressed.js"></script>
+    <script src="./blockly/en.js"></script>
+    <script src="blocks/block.js"></script>
+    <script src="./src/jq/jquery-3.3.1.min.js"></script>
+    <script src="./src/js/renderPage.js"></script>
+    <!-- <script src="./src/js/codeGet.js"></script> -->
+    <script src="./src/js/tools.js"></script>
+    <script src="./src/js/buttonEvents.js"></script>
+    <script src="./index.js"></script>
+
+
+    <script>
+        // var addrArray = [['指令' + '000', "指令" + '000']];
+
+
+    </script>
+</body>
+
+</html>

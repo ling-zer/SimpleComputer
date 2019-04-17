@@ -1,0 +1,352 @@
+/* :root, */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 2vw;
+}
+
+.switch {
+  /* margin: 50px auto; */
+  margin-bottom: 35px;
+  margin-top: 8px;
+  position: relative;
+}
+
+.switch label {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.switch input {
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  opacity: 0;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/*外层框架*/
+div.wrapper{
+    width: 100vw;
+    height: 100vh;
+    padding: 0 80px;
+    margin: 0 auto;
+}
+/* 左侧导航部分 */
+div.nav{
+    width: 15%;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    top: 15vh;
+    /* padding: 0; */
+   
+}
+.nav .list {
+    /* margin: 0; */
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ddd;
+    opacity: 0.7;
+    text-align: center;
+    /* display: none; */
+}
+.nav .list li{
+    border-bottom: 1px solid #000;
+    padding: 10px 10px;
+    cursor: pointer;
+    /* margin: 5px 25px 5px 0px ; */
+}
+/* .nav span{
+    cursor: pointer;
+    width: 25px;
+    height:50px;
+    background: url('../img/timg_right.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+} */
+/* .nav .list,
+.nav span{
+    float: left;
+} */
+
+
+.topWrapper{
+    margin: 0 auto;
+    width: 100%;
+    height: 15%;
+    text-align: center; 
+}
+/* 按钮 */
+button{
+    width: 18vh;
+    height: 5vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 2vh 2vw;
+    font-weight: 600;
+    transition: 0.6s;
+    cursor: pointer;
+    line-height: 40px;
+    background-image: linear-gradient(rgba(255,0,0,0.5),rgba(55,55,100,0.3))
+}
+
+button:hover{
+    box-shadow: 3px 2px 2px rgba(0, 0, 0, .3),inset 1px 2px 2px rgba(255,255,255),inset 1px 3px 3px rgba(255,255,255,0.7);
+    
+}
+
+.wrapper .leftWrapper{
+    width: 80vw;
+    height: 90%;
+    border: 1px solid black;
+    padding: 10px 30px;
+    margin-left: 9vw;
+    box-sizing: border-box;
+    display: flex;
+}
+/* .control-led,
+.switch-container{
+    float: left;
+}
+.leftWrapper 
+::after{
+    content: "";
+    display: block;
+    clear: both;
+} */
+/* .leftWrapper .switch-container::after{
+    content: "";
+    display: block;
+    clear: both;
+} */
+.control-led{
+    width: 15vw;
+}
+.switch-container{
+    width: 30vw;
+}
+
+.leftWrapper .control-led .led{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    /* float: left; */
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 20px;
+
+}
+/* .switch-container{
+    width: 200px;
+    height: 60px;
+} */
+.switch.demo3 {
+    width: 90px;
+    height: 25px;
+  }
+  
+  .switch.demo3 label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #a5a39d;
+    border-radius: 40px;
+    position: relative;
+    box-shadow:
+        inset 0 3px 8px 1px rgba(0,0,0,0.2),
+        0 1px 0 rgba(255,255,255,0.5);
+  }
+  
+  .switch.demo3 label:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -8px; right: -8px; bottom: -8px; left: -8px;
+    border-radius: inherit;
+    background: #ababab;
+    /* background: -moz-linear-gradient(#f2f2f2, #ababab);
+    background: -ms-linear-gradient(#f2f2f2, #ababab);
+    background: -o-linear-gradient(#f2f2f2, #ababab);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#ababab));
+    background: -webkit-linear-gradient(#f2f2f2, #ababab);
+    background: linear-gradient(#f2f2f2, #ababab); */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3),
+          0 1px 1px rgba(0,0,0,0.25);
+  }
+  
+  .switch.demo3 label:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0px; right: 0px; bottom: 0px; left: 0px;
+    border-radius: inherit;
+    background: #eee;
+    /* background: -moz-linear-gradient(#e5e7e6, #eee);
+    background: -ms-linear-gradient(#e5e7e6, #eee);
+    background: -o-linear-gradient(#e5e7e6, #eee);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#e5e7e6), to(#eee));
+    background: -webkit-linear-gradient(#e5e7e6, #eee);
+    background: linear-gradient(#e5e7e6, #eee); */
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.5);
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -ms-filter: blur(1px);
+    -o-filter: blur(1px);
+    filter: blur(1px);
+  }
+  
+  .switch.demo3 label i {
+    display: block;
+    height: 100%;
+    width: 60%;
+    border-radius: inherit;
+    background: silver;
+    position: absolute;
+    z-index: 2;
+    right: 40%;
+    top: 0;
+    background: #b2ac9e;
+    /* background: -moz-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -ms-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -o-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f2f6), to(#b2ac9e));
+    background: -webkit-linear-gradient(#f7f2f6, #b2ac9e);
+    background: linear-gradient(#f7f2f6, #b2ac9e); */
+    box-shadow:
+        inset 0 1px 0 white,
+        0 0 8px rgba(0,0,0,0.3),
+        0 5px 5px rgba(0,0,0,0.2);
+  }
+  
+  .switch.demo3 label i:after {
+    content: "";
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    width: 70%;
+    height: 50%;
+    /* background: #d2cbc3; */
+    /* background: -moz-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -ms-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -o-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#cbc7bc), to(#d2cbc3));
+    background: -webkit-linear-gradient(#cbc7bc, #d2cbc3);
+    background: linear-gradient(#cbc7bc, #d2cbc3); */
+    border-radius: inherit;
+  }
+  
+  .switch.demo3 label i:before {
+    content: "off";
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    color: rgba(0,0,0,0.4);
+    text-shadow: 0 1px 0 #bcb8ae, 0 -1px 0 #97958e;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    right: -50%;
+  }
+  
+  .switch.demo3 input:checked ~ label {
+    background: #9abb82;
+  }
+  
+  .switch.demo3 input:checked ~ label i {
+    right: -1%;
+  }
+  
+  .switch.demo3 input:checked ~ label i:before {
+    content: "on";
+    right: 115%;
+    color: #82a06a;
+    text-shadow: 
+      0 1px 0 #afcb9b,
+      0 -1px 0 #6b8659;
+  }
+
+/* .led:hover{
+    background-color: rgba(200,225, 0, 0.5);
+    
+} */
+
+#blocklyDiv{
+    height: 90vh;
+    width: 80vw;
+    box-sizing: border-box;
+    margin-left: 9vw;
+}
+#blocklyDiv span{
+    font-size: 20px;
+}
+#blocklyDiv text {
+    font-size: 16px;
+}
+/* .leftWrapper,
+#blocklyDiv{
+    float:left;
+} */
+
+div.slider{
+     display: none;
+     position: absolute;
+     top: 165px;
+     left: 20px;
+     z-index: 999;
+}
+p.memery{
+    height: 20px;
+    text-align: center;
+    background: rgba(200,225, 0, 0.8);
+    cursor: pointer;
+}
+table{
+    border: 1px solid black;
+    width: 590px;
+    font-size: 12px;
+    background: rgba(200,225, 0, 0.8);
+   
+}
+div.reg{
+    /* display: none; */
+    position: relative;
+    /* bottom: -80px; */
+    background-color: aquamarine;
+    width: 100%;
+    z-index: 9999;
+    text-align: center;
+    overflow: hidden;
+    /* padding: 50px; */
+}
+#infoDiv{
+    display: inline-block; 
+    width: 640px;  
+}
+#memDiv{
+    display: inline-block;  
+    width: 300px;
+}
+
+.add {
+    background-color: aquamarine;
+}
