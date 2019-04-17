@@ -11,3 +11,7 @@ instruction block:
 simulative peripheral:
 
 ![Image text](https://github.com/codecatdog/SimpleComputer/blob/master/imgInReadme/peripheral.JPG)
+
+simulative register:
+
+![Image text](https://github.com/codecatdog/SimpleComputer/blob/master/imgInReadme/register.JPG)
